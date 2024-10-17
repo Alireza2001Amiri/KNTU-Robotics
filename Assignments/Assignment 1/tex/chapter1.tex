@@ -1,0 +1,321 @@
+% !TeX root=../main.tex
+
+\chapter{پاسخ سوالات سری اول}
+
+% دستور زیر باعث عدم‌نمایش شماره صفحه در اولین صفحهٔ این فصل می‌شود.
+%\thispagestyle{empty}
+\section{توصیف جهت گیری}
+
+\subsection{ پاسخ سوال 1}
+
+\subsection{ پاسخ سوال 2}
+
+\subsection{ پاسخ سوال 3}
+وجود نویز در اندازه گیری ماتریس دوران، منجر به ذخیره ی اشتباه مقدار عددی بعضی از درایه ها خواهد شد. بنابراین، برای اصلاح ماتریس دوران، باید بر اساس یژگی های اساسی این ماتریس، مقادیر اشتباه را پیدا و تصحیح کرد. از جمله ی این ویژگی ها می توان به این موارد اشاره کرد:
+
+\begin{enumerate}
+	\item یکامتعامد
+	\item دترمینان برابر 1 باشد.
+	\item مقدار وارون ماتریس با ترانهاده ی ماتریس برابر باشد.
+	\item یک مقدار ویژه برابر 1 داشته باشد.
+\end{enumerate}
+
+\subsection{ پاسخ سوال 4}
+\begin{enumerate}
+	\item 
+در این بخش ابتدا یکه بودن هر یک از بردار های u، v و w را بررسی کرده و مقدار مجهول را با استفاده از این رابطه مشخص می کنیم.
+\[
+1 = \sqrt{x^2 + 0.6046^2 + 0.0977^2} 
+\Rightarrow \quad x = \pm0.7905
+\]
+
+\[
+1 = \sqrt{0.3864^2 + 0.3686^2 + z^2} 
+\Rightarrow \quad z = \pm0.8454
+\]
+
+\[
+1 = \sqrt{0.4752^2 + y^2 + 0.5250^2} 
+\Rightarrow \quad y = \pm0.7060
+\]
+
+با به دست آوردن مقادیر ممکن برای درایه های مجهول، لازم است علامت آنها نیز به درستی مشخص شود. برای این کار، با محاسبه ی دترمینان ماتریس دوران حاصل از هر یک از این پارامترها، می توانیم علامت صحیح پارامتر ها را در حالتی که دترمینان برابر 1 باشد به دست آوریم. 
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		1.3.1: Defining unknown elements in rotation matrix R
+		
+		A = [0.7905, -0.3864, 0.4752; 
+		0.6046, 0.3686, -0.7060; 
+		0.0977, 0.8454, 0.5250]
+		det_A = det(A);
+		
+		disp('Determinant of matrix A:'); disp(det_A)
+		
+	\end{lstlisting}
+\end{latin}
+
+در نتیجه:
+\[
+\quad x = +0.7905,
+\quad y = -0.7060,
+\quad z = +0.8454
+\]
+
+\begin{itemize}
+
+ \item 
+محاسبه زوایای اویلر حول محور ثابت:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.2: Inverse Rpry
+
+
+% Define the rotation matrix R with numerical values
+disp(R)
+% Calculate beta
+beta = atan2(-R(3,1), sqrt(R(1,1)^2 + R(2,1)^2));
+
+% Calculate gamma
+gamma = atan2(R(2,1) / cos(beta), R(1,1) / cos(beta));
+
+% Calculate alpha
+alpha = atan2(R(3,2) / cos(beta), R(3,3) / cos(beta));
+
+% Display the calculated angles in radians
+fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+
+% Optionally, convert radians to degrees
+alpha_deg = rad2deg(alpha);
+beta_deg = rad2deg(beta);
+gamma_deg = rad2deg(gamma);
+
+% Display the angles in degrees
+fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 58.16^{\circ},
+\quad \beta = -5.61^{\circ},
+\quad \gamma = +37.41^{\circ}
+\]
+
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Ruvw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+	1.3.3: Inversw Ruvw 
+	We calculate Euler angles (alpha, beta, gamma) from a given rotation matrix R.
+	
+	% Define the rotation matrix R with numerical values
+	disp(R)
+	% Calculate beta
+	beta = atan2(R(1,3), sqrt(R(1,1)^2 + R(1,2)^2));
+	
+	% Calculate alpha
+	alpha = atan2(-R(2,3) / cos(beta), R(3,3) / cos(beta));
+	
+	% Calculate gamma
+	gamma = atan2(-R(1,2) / cos(beta), R(1,1) / cos(beta));
+	
+	% Display the calculated angles in radians
+	fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+	
+	% Optionally, convert radians to degrees
+	alpha_deg = rad2deg(alpha);
+	beta_deg = rad2deg(beta);
+	gamma_deg = rad2deg(gamma);
+	
+	% Display the angles in degrees
+	fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 53.36^{\circ},
+\quad \beta = 28.37^{\circ},
+\quad \gamma = 26.05^{\circ}
+\]
+
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Rwvw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+	1.3.4: Inverse Rwvw 
+	In this section we calculate the Euler angels given a Rotation Matrix in the system of wvw.
+	% Define the rotation matrix R with numerical values
+	disp(R)
+	
+	% Calculate beta
+	beta = atan2(sqrt(R(3,1)^2 + R(3,2)^2),R(3,3));
+	
+	% Calculate alpha
+	alpha = atan2(R(2,3) / sin(beta), R(1,3) / sin(beta));
+	
+	% Calculate gamma
+	gamma = atan2(R(3,2) / sin(beta), -R(3,1) / sin(beta));
+	
+	% Display the calculated angles in radians
+	fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+	
+	% Optionally, convert radians to degrees
+	alpha_deg = rad2deg(alpha);
+	beta_deg = rad2deg(beta);
+	gamma_deg = rad2deg(gamma);
+	
+	% Display the angles in degrees
+	fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = -56.06^{\circ},
+\quad \beta = 58.33^{\circ},
+\quad \gamma = 96.59^{\circ}
+\]
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Rwuw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.5: Inverse Rwuw 
+In this section we calculate the Euler angels given a Rotation Matrix in the system of wuw.
+% Define the rotation matrix R with numerical values
+disp(R)
+% Calculate beta
+beta = atan2(sqrt(R(3,1)^2 + R(3,2)^2),R(3,3));
+
+% Calculate alpha
+alpha = atan2(R(1,3) / sin(beta), -R(2,3) / sin(beta));
+
+% Calculate gamma
+gamma = atan2(R(3,1) / sin(beta), R(3,2) / sin(beta));
+
+% Display the calculated angles in radians
+fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+
+% Optionally, convert radians to degrees
+alpha_deg = rad2deg(alpha);
+beta_deg = rad2deg(beta);
+gamma_deg = rad2deg(gamma);
+
+% Display the angles in degrees
+fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 33.94^{\circ},
+\quad \beta = 58.33^{\circ},
+\quad \gamma = 6.59^{\circ}
+\]
+\end{itemize}
+
+\item
+محاسبه ی زاویه و محور دوران معادل:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.6: Inverse Screw 
+% Step 1: Define the rotation matrix R (example)
+disp(R)
+
+% Step 2: Calculate the rotation angle theta using the trace of R
+theta = acos((trace(R) - 1) / 2);
+
+% Step 3: Check if sin(theta) is zero (to avoid division by zero)
+if sin(theta) == 0
+error('Singularity encountered: sin(theta) is zero. Unable to compute the axis.');
+end
+
+% Step 4: Calculate the components of the screw axis s = [sx, sy, sz]
+sx = (R(3,2) - R(2,3)) / (2 * sin(theta));
+sy = (R(1,3) - R(3,1)) / (2 * sin(theta));
+sz = (R(2,1) - R(1,2)) / (2 * sin(theta));
+
+% Step 5: Display the calculated screw axis and rotation angle
+fprintf('Calculated rotation angle (theta) in radians: %.4f\n', theta);
+fprintf('Calculated rotation angle (theta) in degrees: %.4f\n', rad2deg(theta));
+fprintf('Screw axis vector s = [sx, sy, sz]: [%.4f, %.4f, %.4f]\n', sx, sy, sz);
+
+% Optional: Normalize the screw axis (if you want the unit vector)
+s_magnitude = sqrt(sx^2 + sy^2 + sz^2);
+s_normalized = [sx, sy, sz] / s_magnitude;
+fprintf('Normalized screw axis vector s: [%.4f, %.4f, %.4f]\n', s_normalized(1), s_normalized(2), s_normalized(3));
+
+%% Step 6: Calculate the theta vector (theta_x, theta_y, theta_z)
+theta_x = theta * sx;
+theta_y = theta * sy;
+theta_z = theta * sz;
+
+% Step 7: Display the theta vector
+fprintf('Theta vector = [theta_x, theta_y, theta_z]: [%.4f, %.4f, %.4f]\n', theta_x, theta_y, theta_z);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \theta = 30.00^{\circ},
+\]
+\[
+\quad \textbf{S} = [s_{x}, s_{y}, s_{z}]: [0.8255, 0.2009, 0.5273]
+\]
+\[
+\vec{\theta} = [\theta_{x}, \theta_{y}, \theta_{z}]: [1.0085, 0.2454, 0.6442]
+\]
+
+\item 
+محاسبه نمایش چهارگان ماتریس دوران R:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+% Step 1: Define the rotation matrix R (example)
+disp(R)
+
+% Step 2: Calculate the scalar part of the quaternion (e4)
+e4 = 0.5 * sqrt(1 + R(1,1) + R(2,2) + R(3,3));
+
+% Step 3: Calculate the vector components of the quaternion
+e1 = (R(3,2) - R(2,3)) / (4 * e4);   % e1
+e2 = (R(1,3) - R(3,1)) / (4 * e4);   % e2
+e3 = (R(2,1) - R(1,2)) / (4 * e4);   % e3
+
+% Step 4: Display the quaternion as a vector [e1, e2, e3, e4]
+quaternion_from_R = [e1, e2, e3, e4];
+disp('Quaternion vector [e1, e2, e3, e4]:');
+disp(quaternion_from_R);
+
+	\end{lstlisting}
+\end{latin}
+\[
+\vec{\epsilon} = [\epsilon_{1}, \epsilon_{2}, \epsilon_{3}, \epsilon_{4}] = [0.4735, 0.1152, 0.3024, 0.8192]
+\]
+
+
+
+
+
+
+
+\end{enumerate}
+
+\subsection{ پاسخ سوال 5}
+
+\subsection{ پاسخ سوال 6}
+
+\subsection{ پاسخ سوال 7}
+
+
