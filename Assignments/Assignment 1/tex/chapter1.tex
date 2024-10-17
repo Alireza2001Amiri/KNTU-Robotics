@@ -304,17 +304,277 @@ disp(quaternion_from_R);
 \vec{\epsilon} = [\epsilon_{1}, \epsilon_{2}, \epsilon_{3}, \epsilon_{4}] = [0.4735, 0.1152, 0.3024, 0.8192]
 \]
 
-
-
-
-
-
-
 \end{enumerate}
 
 \subsection{ پاسخ سوال 5}
 
+با در اختیار داشتن ماتریس دوران، میتوان با استفاده از ویژگی های مختلف این ماتریس اقدام به پیدا کردن المان های مجهول کرد. یکی از راه ها، محاسبه ی ترانهاده و وارون ماتریس و برابر قرار دادن المان های متناظر است که به دلیل پیچیدگی زیاد این روش، از ویژگی دیگری استفاده می شود.
+به عنوان جایگزین، با استفاده از روابط ضرب خارجی ستون های ماتریس دوران چنان که در بخش پایین قرار داده شده است استفاده می کنیم.
+
+\begin{equation}
+	\label{eq:cross_products}
+	\begin{aligned}
+		\mathbf{u} \times \mathbf{v} &= \mathbf{w}, \\
+		\mathbf{v} \times \mathbf{w} &= \mathbf{u}, \\
+		\mathbf{w} \times \mathbf{u} &= \mathbf{v}
+	\end{aligned}
+\end{equation}
+
+
+ماتریس R مطابق صورت سوال به شکل زیر تعریف می شود:
+
+\[
+R = \left(
+\begin{array}{ccc}
+	\cos \left(t\right) & a & b \\
+	\sin \left(t\right) & \frac{\sqrt{2}\,k\,\cos \left(t\right)}{2} & c \\
+	0 & -\frac{\sqrt{2}\,k\,\sin \left(t\right)}{2} & d
+\end{array}
+\right)
+\]
+
+با قرار دادن ستون های این ماتریس به عنوان u, v, w و محاسبه ی ضرب خارجی آنها خواهیم داشت:
+
+\[
+\mathbf{u} \times \mathbf{v} = \left(
+\begin{array}{c} 
+	-\frac{\sqrt{2}\,k\,{\sin \left(t\right)}^2 }{2} \\
+	\frac{\sqrt{2}\,k\,\sin \left(2\,t\right)}{4} \\
+	-\frac{\sqrt{2}\,k\,{\sin \left(t\right)}^2 }{2} - a\,\sin \left(t\right) + \frac{\sqrt{2}\,k}{2}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{v} \times \mathbf{w} = \left(
+\begin{array}{c}
+	\frac{\sqrt{2}\,k\,\left(d\,\cos \left(t\right) + c\,\sin \left(t\right)\right)}{2} \\
+	-a\,d - \frac{\sqrt{2}\,b\,k\,\sin \left(t\right)}{2} \\
+	a\,c - \frac{\sqrt{2}\,b\,k\,\cos \left(t\right)}{2}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{w} \times \mathbf{u} = \left(
+\begin{array}{c}
+	-d\,\sin \left(t\right) \\
+	d\,\cos \left(t\right) \\
+	b\,\sin \left(t\right) - c\,\cos \left(t\right)
+\end{array}
+\right)
+\]
+
+با برابر قرار دادن این ماتریس ها با ستون های ماتریس دوران و حل معادلات به دست آمده به ازای مقادیر a,b,c,d,k به جواب های زیر دست می یابیم.
+
+\[
+\mathbf{a} = \left(
+\begin{array}{c}
+	-\frac{\sin \left(t\right)}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	\frac{\sin \left(t\right)}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{b} = \left(
+\begin{array}{c}
+	-\frac{{\sin \left(t\right)}^2}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	\frac{{\sin \left(t\right)}^2}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{c} = \left(
+\begin{array}{c}
+	\frac{\sin \left(2\,t\right)}{2\,\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{\sin \left(2\,t\right)}{2\,\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{d} = \left(
+\begin{array}{c}
+	\frac{1}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{1}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{k} = \left(
+\begin{array}{c}
+	\frac{\sqrt{2}}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{\sqrt{2}}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+
+
+
+
+
 \subsection{ پاسخ سوال 6}
+
+با در اختیار داشتن مقادیر زوایای اویلر، می توان ماتریس دوران و مشتق آن را به دست آورده و با استفاده از المان های این ماتریس ها، سرعت زاویه ای و ماتریس تبدیل آن را به دست آورد. برای این منظور، مطابق فرایند زیر عمل می کنیم.
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+%% Section 1: Define the Euler Angles and Rotation Matrices for UVW
+% Define symbolic angles alpha, beta, gamma for the Euler angles
+syms alpha beta gamma real
+syms alpha_dot beta_dot gamma_dot real  % Time derivatives of the angles
+
+% Step 1: Define symbolic rotation matrices for each axis
+% Rotation about the x-axis (Ru(alpha))
+Ru_alpha = [1,          0,           0;
+0, cos(alpha), -sin(alpha);
+0, sin(alpha),  cos(alpha)];
+
+% Rotation about the y-axis (Rv(beta))
+Rv_beta = [cos(beta),  0, sin(beta);
+0,          1, 0;
+-sin(beta), 0, cos(beta)];
+
+% Rotation about the z-axis (Rw(gamma))
+Rw_gamma = [cos(gamma), -sin(gamma), 0;
+sin(gamma),  cos(gamma), 0;
+0,           0,          1];
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+R_{u_\alpha} = \left(
+\begin{array}{ccc}
+	1 & 0 & 0 \\
+	0 & \cos \left(\alpha\right) & -\sin \left(\alpha\right) \\
+	0 & \sin \left(\alpha\right) & \cos \left(\alpha\right)
+\end{array}
+\right)
+\]
+
+\[
+R_{v_\beta} = \left(
+\begin{array}{ccc}
+	\cos \left(\beta \right) & 0 & \sin \left(\beta \right) \\
+	0 & 1 & 0 \\
+	-\sin \left(\beta \right) & 0 & \cos \left(\beta \right)
+\end{array}
+\right)
+\]
+
+\[
+R_{w_\gamma} = \left(
+\begin{array}{ccc}
+	\cos \left(\gamma \right) & -\sin \left(\gamma \right) & 0 \\
+	\sin \left(\gamma \right) & \cos \left(\gamma \right) & 0 \\
+	0 & 0 & 1
+\end{array}
+\right)
+\]
+
+آنگاه ماتریس دوران حاصل از سه دوران حول محور های اویلر از ضرب سه ماتریس فوق به دست می آید:
+\[
+\scriptsize
+R_{uvw} = \left(
+\begin{array}{ccc}
+	\cos \left(\beta\right)\,\cos \left(\gamma\right) & -\cos \left(\beta\right)\,\sin \left(\gamma\right) & \sin \left(\beta\right) \\
+	\cos \left(\alpha\right)\,\sin \left(\gamma\right) + \cos \left(\gamma\right)\,\sin \left(\alpha\right)\,\sin \left(\beta\right) & \cos \left(\alpha\right)\,\cos \left(\gamma\right) - \sin \left(\alpha\right)\,\sin \left(\beta\right)\,\sin \left(\gamma\right) & -\cos \left(\beta\right)\,\sin \left(\alpha\right) \\
+	\sin \left(\alpha\right)\,\sin \left(\gamma\right) - \cos \left(\alpha\right)\,\cos \left(\gamma\right)\,\sin \left(\beta\right) & \cos \left(\gamma\right)\,\sin \left(\alpha\right) + \cos \left(\alpha\right)\,\sin \left(\beta\right)\,\sin \left(\gamma\right) & \cos \left(\alpha\right)\,\cos \left(\beta\right)
+\end{array}
+\right)
+\]
+
+در ادامه و با محاسبه ی مشتق این ماتریس، سرعت زاویه ای $\omega$ را محاسبه می کنیم.
+\\
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		%% Section 1: Define the Euler Angles and Rotation Matrices for UVW
+		% Define symbolic angles alpha, beta, gamma for the Euler angles
+		syms alpha beta gamma real
+		syms alpha_dot beta_dot gamma_dot real  % Time derivatives of the angles
+		
+		% Step 1: Define symbolic rotation matrices for each axis
+		% Rotation about the x-axis (Ru(alpha))
+		Ru_alpha = [1,          0,           0;
+		0, cos(alpha), -sin(alpha);
+		0, sin(alpha),  cos(alpha)];
+		
+		% Rotation about the y-axis (Rv(beta))
+		Rv_beta = [cos(beta),  0, sin(beta);
+		0,          1, 0;
+		-sin(beta), 0, cos(beta)];
+		
+		% Rotation about the z-axis (Rw(gamma))
+		Rw_gamma = [cos(gamma), -sin(gamma), 0;
+		sin(gamma),  cos(gamma), 0;
+		0,           0,          1];
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\scriptsize
+R_{uvw \cdot} = 
+\begin{array}{l}
+	\left(\begin{array}{ccc}
+		-\dot{\beta} \,\cos \left(\gamma \right)\,\sin \left(\beta \right) - \dot{\gamma} \,\cos \left(\beta \right)\,\sin \left(\gamma \right) & \dot{\beta} \,\sin \left(\beta \right)\,\sin \left(\gamma \right) - \dot{\gamma} \,\cos \left(\beta \right)\,\cos \left(\gamma \right) & \dot{\beta} \,\cos \left(\beta \right) \\
+		\dot{\gamma} \,\sigma_2 - \dot{\alpha} \,\sigma_1 + \dot{\beta} \,\cos \left(\beta \right)\,\cos \left(\gamma \right)\,\sin \left(\alpha \right) & -\dot{\alpha} \,\sigma_3 - \dot{\gamma} \,\sigma_4 - \dot{\beta} \,\cos \left(\beta \right)\,\sin \left(\alpha \right)\,\sin \left(\gamma \right) & \dot{\beta} \,\sin \left(\alpha \right)\,\sin \left(\beta \right) - \dot{\alpha} \,\cos \left(\alpha \right)\,\cos \left(\beta \right) \\
+		\dot{\alpha} \,\sigma_4 + \dot{\gamma} \,\sigma_3 - \dot{\beta} \,\cos \left(\alpha \right)\,\cos \left(\beta \right)\,\cos \left(\gamma \right) & \dot{\alpha} \,\sigma_2 - \dot{\gamma} \,\sigma_1 + \dot{\beta} \,\cos \left(\alpha \right)\,\cos \left(\beta \right)\,\sin \left(\gamma \right) & -\dot{\alpha} \,\cos \left(\beta \right)\,\sin \left(\alpha \right) - \dot{\beta} \,\cos \left(\alpha \right)\,\sin \left(\beta \right)
+	\end{array}\right)\\
+	\\
+	\text{where}\\
+	\\
+	\sigma_1 = \sin \left(\alpha \right)\,\sin \left(\gamma \right) - \cos \left(\alpha \right)\,\cos \left(\gamma \right)\,\sin \left(\beta \right)\\
+	\\
+	\sigma_2 = \cos \left(\alpha \right)\,\cos \left(\gamma \right) - \sin \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right)\\
+	\\
+	\sigma_3 = \cos \left(\gamma \right)\,\sin \left(\alpha \right) + \cos \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right)\\
+	\\
+	\sigma_4 = \cos \left(\alpha \right)\,\sin \left(\gamma \right) + \cos \left(\gamma \right)\,\sin \left(\alpha \right)\,\sin \left(\beta \right)
+\end{array}
+\]
+
+
+\[
+\Omega = \left(\begin{array}{c}
+	\dot{\alpha} + \dot{\gamma} \,\sin \left(\beta \right) \\
+	\dot{\beta} \,\cos \left(\alpha \right) - \dot{\gamma} \,\cos \left(\beta \right) \,\sin \left(\alpha \right) \\
+	\dot{\beta} \,\sin \left(\alpha \right) + \dot{\gamma} \,\cos \left(\alpha \right) \,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+در گام آخر، ماتریس تبدیل E با استفاده از تبدیل ژاکوبین و کمی ساده سازی به شکل زیر به دست می آید:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Construct the matrix E by taking the Jacobian of Omega with respect to [alpha_dot; beta_dot; gamma_dot]
+E_matrix = jacobian(Omega_vec, [alpha_dot, beta_dot, gamma_dot]);
+
+% Simplify the matrix E
+E_matrix = simplify(E_matrix);
+
+% Display the matrix E(alpha, beta, gamma)
+disp('Matrix E(alpha, beta, gamma):');
+disp(E_matrix);
+
+	\end{lstlisting}
+\end{latin}
+
+\[
+E = \left(\begin{array}{ccc}
+	1 & 0 & \sin \left(\beta \right) \\
+	0 & \cos \left(\alpha \right) & -\cos \left(\beta \right) \,\sin \left(\alpha \right) \\
+	0 & \sin \left(\alpha \right) & \cos \left(\alpha \right) \,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+
 
 \subsection{ پاسخ سوال 7}
 
