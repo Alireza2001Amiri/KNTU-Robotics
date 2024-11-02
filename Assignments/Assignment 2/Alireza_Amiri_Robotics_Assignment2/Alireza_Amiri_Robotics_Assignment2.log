@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.9.2)  2 NOV 2024 03:47
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.9.2)  3 NOV 2024 02:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2386,8 +2386,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [3] (Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(1)/b/n' will be
-(Font)              scaled to size 14.39996pt on input line 139.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2410,6 +2408,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
+LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(1)/b/n' will be
+(Font)              scaled to size 14.39996pt on input line 157.
 
 Overfull \hbox (28.53952pt too wide) detected at line 168
 \OML/cmm/m/it/12 T \OT1/cmr/m/n/12 = []
@@ -2436,8 +2436,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 203.
+
+Overfull \hbox (58.80322pt too wide) detected at line 208
+\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 ^^B 
+\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 
+= []
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2456,12 +2464,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 214.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2476,8 +2478,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [7] (Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-Underfull \vbox (badness 1661) has occurred while \output is active []
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
+
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
+
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
 
 
@@ -2493,9 +2500,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8] (Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-Underfull \vbox (badness 6608) has occurred while \output is active []
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
+
+\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 305.
+
+
+Overfull \hbox (76.5144pt too wide) detected at line 313
+\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 ^^A \OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12
+ ^^A \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2510,417 +2531,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [9] (Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-
-Underfull \vbox (badness 6110) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
-[10] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
+ [10
 
-
-Underfull \vbox (badness 1661) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[11] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[12] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 399.
-
-Underfull \vbox (badness 6110) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[13] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[14] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[15] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 5862) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[16] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[17] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[18] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 642.
-
-
-
-Overfull \hbox (2.29106pt too wide) detected at line 650
-\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 652--654
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[19] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 682.
-
-LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
-(Font)              scaled to size 5.99998pt on input line 691.
-
-Overfull \hbox (35.33612pt too wide) detected at line 701
-\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[20] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[21] (Alireza_Amiri_Robotics_Assignment2.mw)
+]
+(Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/it' will be
-(Font)              scaled to size 14.39996pt on input line 748.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[22] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[23] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[24] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[25] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 843.
-
-
-
-Overfull \hbox (21.77536pt too wide) detected at line 849
-\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = []
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[26] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[27] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[28] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 930.
-
-
-
-Overfull \hbox (32.29106pt too wide) detected at line 936
-\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = []
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[29] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.52013pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.52013pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.52013pt}.
-
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
-[30] (Alireza_Amiri_Robotics_Assignment2.mw)
-\openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
-
+(Font)              scaled to size 14.39996pt on input line 321.
 )
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
- [31
-
-]
+ [11]
 (Alireza_Amiri_Robotics_Assignment2.mw)
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.mw'.
 
@@ -2940,20 +2564,30 @@ L3 programming layer <2024-01-22>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 \openout5 = `Alireza_Amiri_Robotics_Assignment2.out'.
 
-Package rerunfilecheck Info: File `Alireza_Amiri_Robotics_Assignment2.out' has 
-not changed.
-(rerunfilecheck)             Checksum: 13A1823A2F0533B053918A760A5FAB91;2839.
+
+Package rerunfilecheck Warning: File `Alireza_Amiri_Robotics_Assignment2.out' h
+as changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Alireza_Amiri_Robotics_Assignment2.
+out':
+(rerunfilecheck)             Before: 338B5A94F4216E6FBF551AF425EFBAD2;2339
+(rerunfilecheck)             After:  E4FF5EEB0FEE14200F145796D340A6A8;2444.
  )
 (\end occurred when \ifx on line 26 was incomplete) 
 Here is how much of TeX's memory you used:
- 41926 strings out of 409673
- 825685 string characters out of 5774502
- 2112630 words of memory out of 5000000
- 62840 multiletter control sequences out of 15000+600000
- 568025 words of font info for 141 fonts, out of 8000000 for 9000
+ 41564 strings out of 409673
+ 817500 string characters out of 5774502
+ 1938630 words of memory out of 5000000
+ 62602 multiletter control sequences out of 15000+600000
+ 567969 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 105i,15n,122p,2378b,2189s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 105i,14n,104p,2378b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Alireza_Amiri_Robotics_Assignment2.pdf (32 pages).
+Output written on Alireza_Amiri_Robotics_Assignment2.pdf (12 pages).
