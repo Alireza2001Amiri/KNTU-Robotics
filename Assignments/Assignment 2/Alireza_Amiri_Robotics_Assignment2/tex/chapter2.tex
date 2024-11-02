@@ -1,0 +1,992 @@
+% !TeX root=../main.tex
+
+\chapter{پاسخ سوالات سری دوم}
+
+% دستور زیر باعث عدم‌نمایش شماره صفحه در اولین صفحهٔ این فصل می‌شود.
+%\thispagestyle{empty}
+\section{پاسخ سوال 1 - الف}
+
+\subsection{پاسخ بخش اول}
+در این بخش، از آنجا که تنها موقعیت نهایی ابزار مورد نیاز است و جهت یابی آن خواسته نشده است، می توانیم با استفاده از معادله ی (61.2) موقعیت نهایی را به دست آوریم
+
+\[
+\mathbf{A}_{\mathbf{P}} = \mathbf{A}_{\mathbf{P}_{O_B}} + \mathbf{A}_{\mathbf{R}_{B}} \cdot \mathbf{B}_{\mathbf{P}}
+\]
+
+برای این منظور، با تقسیم معادلات به دو بخش نوک ابزار و نقطه ی A و ترکیب این دو، می توانیم در نهایت موقعیت نوک ابزار را نسبت به مبدا مختصات به دست آوریم.
+در بخش اول که مربوط به پیدا کردن مختصات نقطه ی A در مختصات مبدا است، ابتدا ماتریس دوران حول محور ثابت Z به اندازه ی $\theta$ و ماتریس دوران حول محور متغیر y به اندازه ی $\phi$ را تعریف می کنیم.
+
+\[
+R_y(\theta) = \begin{bmatrix}
+	\cos(\theta) & 0 & \sin(\theta) \\
+	0 & 1 & 0 \\
+	-\sin(\theta) & 0 & \cos(\theta)
+\end{bmatrix}
+\]
+
+\[
+R_z(\phi) = \begin{bmatrix}
+	\cos(\phi) & -\sin(\phi) & 0 \\
+	\sin(\phi) & \cos(\phi) & 0 \\
+	0 & 0 & 1
+\end{bmatrix}
+\]
+
+با در اختیار داشتن ماتریس های دوران، می توانیم با ضرب آن  در موقعیت ابتدایی نقطه ی A، موقعیت جدید نقطه ی A را به دست بیاوریم.
+
+\[
+A_0 =
+\begin{pmatrix}
+	0 \\
+	0 \\
+	L_{1234}
+\end{pmatrix}
+\]
+
+\[
+P_A = 
+\begin{pmatrix}
+	L_{1234} \cos(\phi) \sin(\theta) \\
+	L_{1234} \sin(\phi) \sin(\theta) \\
+	L_{1234} \cos(\theta)
+\end{pmatrix}
+\]
+
+در اینجا باید توجه شود که چون دوران حول محور z، دوران حول محور متغیر است، بنابراین این ماتریس از سمت چپ ضرب شده است
+\subsection{پاسخ بخش دوم}
+در بخش بعد، مانند آنچه که در این بخش انجام شدتلاش می شود موقعیت 
+نوک ابزار ربات جراح نسبت به موقعیت جدید نقطه ی A به دست می آید.
+
+برای تعریف ماتریس های دوران مربوط به این بخش خواهیم داشت:
+\[
+R_y(\theta_d) = \begin{bmatrix}
+	\cos(\theta_d) & 0 & \sin(\theta_d) \\
+	0 & 1 & 0 \\
+	-\sin(\theta_d) & 0 & \cos(\theta_d)
+\end{bmatrix}
+\]
+
+\[
+R_z(\phi_d) = \begin{bmatrix}
+	\cos(\phi_d) & -\sin(\phi_d) & 0 \\
+	\sin(\phi_d) & \cos(\phi_d) & 0 \\
+	0 & 0 & 1
+\end{bmatrix}
+\]
+
+\[
+R_y(\alpha + \psi) = \begin{bmatrix}
+	\cos(\alpha + \psi) & 0 & \sin(\alpha + \psi) \\
+	0 & 1 & 0 \\
+	-\sin(\alpha + \psi) & 0 & \cos(\alpha + \psi)
+\end{bmatrix}
+\]
+از ضرب این ماتریس ها با رعایت قاعده ی ضرب از سمت چپ برای دوران های حول محور متحرک در موقعیت اولیه ی نقطه ی ابزار نسبت به نقطه ی A خواهیم داشت:
+\[
+R_2 = R_y(\alpha + \psi) \cdot R_z(\phi_d) \cdot R_y(\theta_d)
+\]
+\[
+\tiny
+R_2 = 
+\begin{pmatrix}
+	\cos(\alpha + \psi) \cos(\phi_d) \cos(\theta_d) - \sin(\alpha + \psi) \sin(\theta_d) & -\cos(\alpha + \psi) \sin(\phi_d) & \sin(\alpha + \psi) \cos(\theta_d) + \cos(\alpha + \psi) \cos(\phi_d) \sin(\theta_d) \\
+	\cos(\theta_d) \sin(\phi_d) & \cos(\phi_d) & \sin(\phi_d) \sin(\theta_d) \\
+	-\cos(\alpha + \psi) \sin(\theta_d) - \sin(\alpha + \psi) \cos(\phi_d) \cos(\theta_d) & \sin(\alpha + \psi) \sin(\phi_d) & \cos(\alpha + \psi) \cos(\theta_d) - \sin(\alpha + \psi) \cos(\phi_d) \sin(\theta_d)
+\end{pmatrix}
+\]
+\[
+\textbf{d} = 
+\begin{pmatrix}
+	0 \\
+	0 \\
+	d
+\end{pmatrix}
+\]
+\[
+A_{P_D} = R_2 \cdot \textbf{d} = 
+\begin{pmatrix}
+	d \left(\sin(\alpha + \psi) \cos(\theta_d) + \cos(\alpha + \psi) \cos(\phi_d) \sin(\theta_d)\right) \\
+	d \sin(\phi_d) \sin(\theta_d) \\
+	d \left(\cos(\alpha + \psi) \cos(\theta_d) - \sin(\alpha + \psi) \cos(\phi_d) \sin(\theta_d)\right)
+\end{pmatrix}
+\]
+در نهایت پس از به دست آوردن مختصات نقطه ی A نسبت به مرجع و مختصات نقطه ی ابزار نسبت به A، می توانیم مختصات خالص ابزار به مرجع را با استفاده از جمع این دو بردار به دست بیاوریم:
+
+\[
+\small
+O_P = A_{P_D} + O_{P_A} = 
+\begin{pmatrix}
+	d \left(\sin(\alpha + \psi) \cos(\theta_d) + \cos(\alpha + \psi) \cos(\phi_d) \sin(\theta_d)\right) + L_{1234} \cos(\phi) \sin(\theta) \\
+	L_{1234} \sin(\phi) \sin(\theta) + d \sin(\phi_d) \sin(\theta_d) \\
+	L_{1234} \cos(\theta) + d \left(\cos(\alpha + \psi) \cos(\theta_d) - \sin(\alpha + \psi) \cos(\phi_d) \sin(\theta_d)\right)
+\end{pmatrix}
+\]
+
+برای محاسبات فوق که به صورت نمادین در متلب انجام شده اند، قابلیت جایگذاری عددی برای پارامترهای مورد استفاده نیز طراحی شده است تا بتوان با استفاده از داده های عددی، موقعیت دقیق ابزار را نیز محاسبه کرد.
+
+همچنین، با مراجعه به مقاله ی مربوط به ربات جراح چشم آرش در \cite{hassani2021kinematic} مشاهده می شود که روابط مورد استفاده برای تعیین موقعیت ابزار این ربات به صورت زیر تعریف شده است که تفاوت هایی با مقادیر به دست آمده به روش بالا دارد:
+\[
+O_P = 
+\begin{pmatrix}
+	d \left( \sin(\alpha + \psi) \cos(\theta) \cos(\phi) + \cos(\alpha + \psi) \sin(\theta) \cos(\psi) \right) + L_{1234} \sin(\theta) \\
+	d \sin(\phi) \sin(\psi + \alpha) \\
+	d \left( -\sin(\theta) \cos(\phi) \sin(\psi + \alpha) + \cos(\theta) \cos(\psi + \alpha) \right) + L_{1234} \cos(\theta)
+\end{pmatrix}
+\]
+
+
+\subsection{ پاسخ سوال 2}
+\subsubsection{حل به روش بستار حلقه}
+
+در این روش حل، با در نظر گرفتن مختصات ابزار ربات نسبت به مبدا مختصات O، یک بار به صورت مستقیم و با نام گذاری های 
+\[
+[x_e, y_e, \theta_e]
+\]
+ و یک بار نیز با در نظر گرفتن هر یک از مفصل ها و در نهایت با برابر قرار دادن مقادیر به دست آمده از این دو روش، مختصات نهایی را پیدا می کنیم.
+ برای این منظور خواهیم داشت:
+ \[
+ x_e = d_1 + a_3 \cos(\theta_2 + \theta_3) + a_2 \cos(\theta_2)
+ \]
+ \[
+ y_e = a_3 \sin(\theta_2 + \theta_3) + a_2 \sin(\theta_2)
+ \]
+ \[
+ \theta_e = \theta_2 + \theta_3
+ \]
+ 
+ \subsubsection{حل به روش دناویت هارتنبرگ}
+ برای حل این مسئله به روش دناویت هارتنبرگ، لازم است ابتدا پارامتر های دناویت هارتنبرگ برای هر یک از مفصل ها مشخص شده و در ادامه، با پیاده سازی برنامه ی نرم افزاری و اجرای آن، مختصات نقطه حاصل از تبدیل به دست آمده مخاسبه شود. برای اجرای نرم افزاری، از تابع موجود در پایگاه گیت هاب این درس استفاده شده است.
+
+از آنجا که مفصل اول از نوع کشویی است، بنابراین تنها یک پارامتر $d_1$ دارد. دو مفصل چرخشی بعدی، هر یک دارای یک مقدار a و یک زاویه چرخش $\theta$ می باشند. بنابراین، پارامترهای دناویت هارتنبرگ به صورت زیر محاسبه می شود:
+\[
+T = \left(\begin{array}{cccc}
+	1.0\,\cos \left(\theta_2 +\theta_3 \right) & -1.0\,\sin \left(\theta_2 +\theta_3 \right) & 0 & 1.0\,a_3 \,\cos \left(\theta_2 +\theta_3 \right)+1.0\,a_2 \,\cos \left(\theta_2 \right)\\
+	1.0\,\sin \left(\theta_2 +\theta_3 \right) & 1.0\,\cos \left(\theta_2 +\theta_3 \right) & 0 & 1.0\,a_3 \,\sin \left(\theta_2 +\theta_3 \right)+1.0\,a_2 \,\sin \left(\theta_2 \right)\\
+	0 & 0 & 1.0 & 1.0\,d_1 \\
+	0 & 0 & 0 & 1.0
+\end{array}\right)
+\]
+
+مشاهده می شود که مقادیر به دست آمده برای $x_e$ و $y_e$ به طور مشخص با نتایج به دست آمده از روش بستار حلقه مطابقت دارند. 
+همچنین برای محاسبه ی زاویه ی $\theta$ مطابق رابطه ی زیر خواهیم داشت:
+\[
+\theta = \arccos\left(\frac{\text{trace}_A - 1}{2}\right)  % \text{Symbolic } \theta \text{ result}
+\]
+\[
+\theta = \frac{180\,\mathrm{acos}\left(1.0\,\cos \left(\theta_2 +\theta_3 \right)\right)}{\pi }
+\]
+مشخص است که با ساده سازی این عبارت، به جواب به دست آمده در قسمت پیشین خواهیم رسید.
+
+
+\subsection{ پاسخ سوال 3}
+
+\subsection{ پاسخ سوال 4}
+\begin{enumerate}
+	\item 
+در این بخش ابتدا یکه بودن هر یک از بردار های u، v و w را بررسی کرده و مقدار مجهول را با استفاده از این رابطه مشخص می کنیم.
+\[
+1 = \sqrt{x^2 + 0.6046^2 + 0.0977^2} 
+\Rightarrow \quad x = \pm0.7905
+\]
+
+\[
+1 = \sqrt{0.3864^2 + 0.3686^2 + z^2} 
+\Rightarrow \quad z = \pm0.8454
+\]
+
+\[
+1 = \sqrt{0.4752^2 + y^2 + 0.5250^2} 
+\Rightarrow \quad y = \pm0.7060
+\]
+
+با به دست آوردن مقادیر ممکن برای درایه های مجهول، لازم است علامت آنها نیز به درستی مشخص شود. برای این کار، با محاسبه ی دترمینان ماتریس دوران حاصل از هر یک از این پارامترها، می توانیم علامت صحیح پارامتر ها را در حالتی که دترمینان برابر 1 باشد به دست آوریم. 
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		1.3.1: Defining unknown elements in rotation matrix R
+		
+		A = [0.7905, -0.3864, 0.4752; 
+		0.6046, 0.3686, -0.7060; 
+		0.0977, 0.8454, 0.5250]
+		det_A = det(A);
+		
+		disp('Determinant of matrix A:'); disp(det_A)
+		
+	\end{lstlisting}
+\end{latin}
+
+در نتیجه:
+\[
+\quad x = +0.7905,
+\quad y = -0.7060,
+\quad z = +0.8454
+\]
+
+\begin{itemize}
+
+ \item 
+محاسبه زوایای اویلر حول محور ثابت:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.2: Inverse Rpry
+
+
+% Define the rotation matrix R with numerical values
+disp(R)
+% Calculate beta
+beta = atan2(-R(3,1), sqrt(R(1,1)^2 + R(2,1)^2));
+
+% Calculate gamma
+gamma = atan2(R(2,1) / cos(beta), R(1,1) / cos(beta));
+
+% Calculate alpha
+alpha = atan2(R(3,2) / cos(beta), R(3,3) / cos(beta));
+
+% Display the calculated angles in radians
+fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+
+% Optionally, convert radians to degrees
+alpha_deg = rad2deg(alpha);
+beta_deg = rad2deg(beta);
+gamma_deg = rad2deg(gamma);
+
+% Display the angles in degrees
+fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 58.16^{\circ},
+\quad \beta = -5.61^{\circ},
+\quad \gamma = +37.41^{\circ}
+\]
+
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Ruvw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+	1.3.3: Inversw Ruvw 
+	We calculate Euler angles (alpha, beta, gamma) from a given rotation matrix R.
+	
+	% Define the rotation matrix R with numerical values
+	disp(R)
+	% Calculate beta
+	beta = atan2(R(1,3), sqrt(R(1,1)^2 + R(1,2)^2));
+	
+	% Calculate alpha
+	alpha = atan2(-R(2,3) / cos(beta), R(3,3) / cos(beta));
+	
+	% Calculate gamma
+	gamma = atan2(-R(1,2) / cos(beta), R(1,1) / cos(beta));
+	
+	% Display the calculated angles in radians
+	fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+	
+	% Optionally, convert radians to degrees
+	alpha_deg = rad2deg(alpha);
+	beta_deg = rad2deg(beta);
+	gamma_deg = rad2deg(gamma);
+	
+	% Display the angles in degrees
+	fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 53.36^{\circ},
+\quad \beta = 28.37^{\circ},
+\quad \gamma = 26.05^{\circ}
+\]
+
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Rwvw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+	1.3.4: Inverse Rwvw 
+	In this section we calculate the Euler angels given a Rotation Matrix in the system of wvw.
+	% Define the rotation matrix R with numerical values
+	disp(R)
+	
+	% Calculate beta
+	beta = atan2(sqrt(R(3,1)^2 + R(3,2)^2),R(3,3));
+	
+	% Calculate alpha
+	alpha = atan2(R(2,3) / sin(beta), R(1,3) / sin(beta));
+	
+	% Calculate gamma
+	gamma = atan2(R(3,2) / sin(beta), -R(3,1) / sin(beta));
+	
+	% Display the calculated angles in radians
+	fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+	
+	% Optionally, convert radians to degrees
+	alpha_deg = rad2deg(alpha);
+	beta_deg = rad2deg(beta);
+	gamma_deg = rad2deg(gamma);
+	
+	% Display the angles in degrees
+	fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = -56.06^{\circ},
+\quad \beta = 58.33^{\circ},
+\quad \gamma = 96.59^{\circ}
+\]
+
+\item 
+محاسبه زوایای اویلر حول محور متحرک Rwuw:
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.5: Inverse Rwuw 
+In this section we calculate the Euler angels given a Rotation Matrix in the system of wuw.
+% Define the rotation matrix R with numerical values
+disp(R)
+% Calculate beta
+beta = atan2(sqrt(R(3,1)^2 + R(3,2)^2),R(3,3));
+
+% Calculate alpha
+alpha = atan2(R(1,3) / sin(beta), -R(2,3) / sin(beta));
+
+% Calculate gamma
+gamma = atan2(R(3,1) / sin(beta), R(3,2) / sin(beta));
+
+% Display the calculated angles in radians
+fprintf('Calculated angles: alpha = %.2f rad, beta = %.2f rad, gamma = %.2f rad\n', alpha, beta, gamma);
+
+% Optionally, convert radians to degrees
+alpha_deg = rad2deg(alpha);
+beta_deg = rad2deg(beta);
+gamma_deg = rad2deg(gamma);
+
+% Display the angles in degrees
+fprintf('Calculated angles: alpha = %.2f deg, beta = %.2f deg, gamma = %.2f deg\n', alpha_deg, beta_deg, gamma_deg);
+
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \alpha = 33.94^{\circ},
+\quad \beta = 58.33^{\circ},
+\quad \gamma = 6.59^{\circ}
+\]
+\end{itemize}
+
+\item
+محاسبه ی زاویه و محور دوران معادل:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+1.3.6: Inverse Screw 
+% Step 1: Define the rotation matrix R (example)
+disp(R)
+
+% Step 2: Calculate the rotation angle theta using the trace of R
+theta = acos((trace(R) - 1) / 2);
+
+% Step 3: Check if sin(theta) is zero (to avoid division by zero)
+if sin(theta) == 0
+error('Singularity encountered: sin(theta) is zero. Unable to compute the axis.');
+end
+
+% Step 4: Calculate the components of the screw axis s = [sx, sy, sz]
+sx = (R(3,2) - R(2,3)) / (2 * sin(theta));
+sy = (R(1,3) - R(3,1)) / (2 * sin(theta));
+sz = (R(2,1) - R(1,2)) / (2 * sin(theta));
+
+% Step 5: Display the calculated screw axis and rotation angle
+fprintf('Calculated rotation angle (theta) in radians: %.4f\n', theta);
+fprintf('Calculated rotation angle (theta) in degrees: %.4f\n', rad2deg(theta));
+fprintf('Screw axis vector s = [sx, sy, sz]: [%.4f, %.4f, %.4f]\n', sx, sy, sz);
+
+% Optional: Normalize the screw axis (if you want the unit vector)
+s_magnitude = sqrt(sx^2 + sy^2 + sz^2);
+s_normalized = [sx, sy, sz] / s_magnitude;
+fprintf('Normalized screw axis vector s: [%.4f, %.4f, %.4f]\n', s_normalized(1), s_normalized(2), s_normalized(3));
+
+%% Step 6: Calculate the theta vector (theta_x, theta_y, theta_z)
+theta_x = theta * sx;
+theta_y = theta * sy;
+theta_z = theta * sz;
+
+% Step 7: Display the theta vector
+fprintf('Theta vector = [theta_x, theta_y, theta_z]: [%.4f, %.4f, %.4f]\n', theta_x, theta_y, theta_z);
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\quad \theta = 30.00^{\circ},
+\]
+\[
+\quad \textbf{S} = [s_{x}, s_{y}, s_{z}]: [0.8255, 0.2009, 0.5273]
+\]
+\[
+\vec{\theta} = [\theta_{x}, \theta_{y}, \theta_{z}]: [1.0085, 0.2454, 0.6442]
+\]
+
+\item 
+محاسبه نمایش چهارگان ماتریس دوران R:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		
+% Step 1: Define the rotation matrix R (example)
+disp(R)
+
+% Step 2: Calculate the scalar part of the quaternion (e4)
+e4 = 0.5 * sqrt(1 + R(1,1) + R(2,2) + R(3,3));
+
+% Step 3: Calculate the vector components of the quaternion
+e1 = (R(3,2) - R(2,3)) / (4 * e4);   % e1
+e2 = (R(1,3) - R(3,1)) / (4 * e4);   % e2
+e3 = (R(2,1) - R(1,2)) / (4 * e4);   % e3
+
+% Step 4: Display the quaternion as a vector [e1, e2, e3, e4]
+quaternion_from_R = [e1, e2, e3, e4];
+disp('Quaternion vector [e1, e2, e3, e4]:');
+disp(quaternion_from_R);
+
+	\end{lstlisting}
+\end{latin}
+\[
+\vec{\epsilon} = [\epsilon_{1}, \epsilon_{2}, \epsilon_{3}, \epsilon_{4}] = [0.4735, 0.1152, 0.3024, 0.8192]
+\]
+
+\end{enumerate}
+
+\subsection{ پاسخ سوال 5}
+
+با در اختیار داشتن ماتریس دوران، میتوان با استفاده از ویژگی های مختلف این ماتریس اقدام به پیدا کردن المان های مجهول کرد. یکی از راه ها، محاسبه ی ترانهاده و وارون ماتریس و برابر قرار دادن المان های متناظر است که به دلیل پیچیدگی زیاد این روش، از ویژگی دیگری استفاده می شود.
+به عنوان جایگزین، با استفاده از روابط ضرب خارجی ستون های ماتریس دوران چنان که در بخش پایین قرار داده شده است استفاده می کنیم.
+
+\begin{equation}
+	\label{eq:cross_products}
+	\begin{aligned}
+		\mathbf{u} \times \mathbf{v} &= \mathbf{w}, \\
+		\mathbf{v} \times \mathbf{w} &= \mathbf{u}, \\
+		\mathbf{w} \times \mathbf{u} &= \mathbf{v}
+	\end{aligned}
+\end{equation}
+
+
+ماتریس R مطابق صورت سوال به شکل زیر تعریف می شود:
+
+\[
+R = \left(
+\begin{array}{ccc}
+	\cos \left(t\right) & a & b \\
+	\sin \left(t\right) & \frac{\sqrt{2}\,k\,\cos \left(t\right)}{2} & c \\
+	0 & -\frac{\sqrt{2}\,k\,\sin \left(t\right)}{2} & d
+\end{array}
+\right)
+\]
+
+با قرار دادن ستون های این ماتریس به عنوان u, v, w و محاسبه ی ضرب خارجی آنها خواهیم داشت:
+
+\[
+\mathbf{u} \times \mathbf{v} = \left(
+\begin{array}{c} 
+	-\frac{\sqrt{2}\,k\,{\sin \left(t\right)}^2 }{2} \\
+	\frac{\sqrt{2}\,k\,\sin \left(2\,t\right)}{4} \\
+	-\frac{\sqrt{2}\,k\,{\sin \left(t\right)}^2 }{2} - a\,\sin \left(t\right) + \frac{\sqrt{2}\,k}{2}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{v} \times \mathbf{w} = \left(
+\begin{array}{c}
+	\frac{\sqrt{2}\,k\,\left(d\,\cos \left(t\right) + c\,\sin \left(t\right)\right)}{2} \\
+	-a\,d - \frac{\sqrt{2}\,b\,k\,\sin \left(t\right)}{2} \\
+	a\,c - \frac{\sqrt{2}\,b\,k\,\cos \left(t\right)}{2}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{w} \times \mathbf{u} = \left(
+\begin{array}{c}
+	-d\,\sin \left(t\right) \\
+	d\,\cos \left(t\right) \\
+	b\,\sin \left(t\right) - c\,\cos \left(t\right)
+\end{array}
+\right)
+\]
+
+با برابر قرار دادن این ماتریس ها با ستون های ماتریس دوران و حل معادلات به دست آمده به ازای مقادیر a,b,c,d,k به جواب های زیر دست می یابیم.
+
+\[
+\mathbf{a} = \left(
+\begin{array}{c}
+	-\frac{\sin \left(t\right)}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	\frac{\sin \left(t\right)}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{b} = \left(
+\begin{array}{c}
+	-\frac{{\sin \left(t\right)}^2}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	\frac{{\sin \left(t\right)}^2}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{c} = \left(
+\begin{array}{c}
+	\frac{\sin \left(2\,t\right)}{2\,\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{\sin \left(2\,t\right)}{2\,\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{d} = \left(
+\begin{array}{c}
+	\frac{1}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{1}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+\[
+\mathbf{k} = \left(
+\begin{array}{c}
+	\frac{\sqrt{2}}{\sqrt{{\sin \left(t\right)}^2 + 1}} \\
+	-\frac{\sqrt{2}}{\sqrt{{\sin \left(t\right)}^2 + 1}}
+\end{array}
+\right)
+\]
+
+
+
+
+
+
+\subsection{ پاسخ سوال 6}
+
+با در اختیار داشتن مقادیر زوایای اویلر، می توان ماتریس دوران و مشتق آن را به دست آورده و با استفاده از المان های این ماتریس ها، سرعت زاویه ای و ماتریس تبدیل آن را به دست آورد. برای این منظور، مطابق فرایند زیر عمل می کنیم.
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+%% Section 1: Define the Euler Angles and Rotation Matrices for UVW
+% Define symbolic angles alpha, beta, gamma for the Euler angles
+syms alpha beta gamma real
+syms alpha_dot beta_dot gamma_dot real  % Time derivatives of the angles
+
+% Step 1: Define symbolic rotation matrices for each axis
+% Rotation about the x-axis (Ru(alpha))
+Ru_alpha = [1,          0,           0;
+0, cos(alpha), -sin(alpha);
+0, sin(alpha),  cos(alpha)];
+
+% Rotation about the y-axis (Rv(beta))
+Rv_beta = [cos(beta),  0, sin(beta);
+0,          1, 0;
+-sin(beta), 0, cos(beta)];
+
+% Rotation about the z-axis (Rw(gamma))
+Rw_gamma = [cos(gamma), -sin(gamma), 0;
+sin(gamma),  cos(gamma), 0;
+0,           0,          1];
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+R_{u_\alpha} = \left(
+\begin{array}{ccc}
+	1 & 0 & 0 \\
+	0 & \cos \left(\alpha\right) & -\sin \left(\alpha\right) \\
+	0 & \sin \left(\alpha\right) & \cos \left(\alpha\right)
+\end{array}
+\right)
+\]
+
+\[
+R_{v_\beta} = \left(
+\begin{array}{ccc}
+	\cos \left(\beta \right) & 0 & \sin \left(\beta \right) \\
+	0 & 1 & 0 \\
+	-\sin \left(\beta \right) & 0 & \cos \left(\beta \right)
+\end{array}
+\right)
+\]
+
+\[
+R_{w_\gamma} = \left(
+\begin{array}{ccc}
+	\cos \left(\gamma \right) & -\sin \left(\gamma \right) & 0 \\
+	\sin \left(\gamma \right) & \cos \left(\gamma \right) & 0 \\
+	0 & 0 & 1
+\end{array}
+\right)
+\]
+
+آنگاه ماتریس دوران حاصل از سه دوران حول محور های اویلر از ضرب سه ماتریس فوق به دست می آید:
+\[
+\scriptsize
+R_{uvw} = \left(
+\begin{array}{ccc}
+	\cos \left(\beta\right)\,\cos \left(\gamma\right) & -\cos \left(\beta\right)\,\sin \left(\gamma\right) & \sin \left(\beta\right) \\
+	\cos \left(\alpha\right)\,\sin \left(\gamma\right) + \cos \left(\gamma\right)\,\sin \left(\alpha\right)\,\sin \left(\beta\right) & \cos \left(\alpha\right)\,\cos \left(\gamma\right) - \sin \left(\alpha\right)\,\sin \left(\beta\right)\,\sin \left(\gamma\right) & -\cos \left(\beta\right)\,\sin \left(\alpha\right) \\
+	\sin \left(\alpha\right)\,\sin \left(\gamma\right) - \cos \left(\alpha\right)\,\cos \left(\gamma\right)\,\sin \left(\beta\right) & \cos \left(\gamma\right)\,\sin \left(\alpha\right) + \cos \left(\alpha\right)\,\sin \left(\beta\right)\,\sin \left(\gamma\right) & \cos \left(\alpha\right)\,\cos \left(\beta\right)
+\end{array}
+\right)
+\]
+
+در ادامه و با محاسبه ی مشتق این ماتریس، سرعت زاویه ای $\omega$ را محاسبه می کنیم.
+\\
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+		%% Section 1: Define the Euler Angles and Rotation Matrices for UVW
+		% Define symbolic angles alpha, beta, gamma for the Euler angles
+		syms alpha beta gamma real
+		syms alpha_dot beta_dot gamma_dot real  % Time derivatives of the angles
+		
+		% Step 1: Define symbolic rotation matrices for each axis
+		% Rotation about the x-axis (Ru(alpha))
+		Ru_alpha = [1,          0,           0;
+		0, cos(alpha), -sin(alpha);
+		0, sin(alpha),  cos(alpha)];
+		
+		% Rotation about the y-axis (Rv(beta))
+		Rv_beta = [cos(beta),  0, sin(beta);
+		0,          1, 0;
+		-sin(beta), 0, cos(beta)];
+		
+		% Rotation about the z-axis (Rw(gamma))
+		Rw_gamma = [cos(gamma), -sin(gamma), 0;
+		sin(gamma),  cos(gamma), 0;
+		0,           0,          1];
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\tiny
+R_{uvw \cdot} = 
+\begin{array}{l}
+	\left(\begin{array}{ccc}
+		-\dot{\beta} \,\cos \left(\gamma \right)\,\sin \left(\beta \right) - \dot{\gamma} \,\cos \left(\beta \right)\,\sin \left(\gamma \right) & \dot{\beta} \,\sin \left(\beta \right)\,\sin \left(\gamma \right) - \dot{\gamma} \,\cos \left(\beta \right)\,\cos \left(\gamma \right) & \dot{\beta} \,\cos \left(\beta \right) \\
+		\dot{\gamma} \,\sigma_2 - \dot{\alpha} \,\sigma_1 + \dot{\beta} \,\cos \left(\beta \right)\,\cos \left(\gamma \right)\,\sin \left(\alpha \right) & -\dot{\alpha} \,\sigma_3 - \dot{\gamma} \,\sigma_4 - \dot{\beta} \,\cos \left(\beta \right)\,\sin \left(\alpha \right)\,\sin \left(\gamma \right) & \dot{\beta} \,\sin \left(\alpha \right)\,\sin \left(\beta \right) - \dot{\alpha} \,\cos \left(\alpha \right)\,\cos \left(\beta \right) \\
+		\dot{\alpha} \,\sigma_4 + \dot{\gamma} \,\sigma_3 - \dot{\beta} \,\cos \left(\alpha \right)\,\cos \left(\beta \right)\,\cos \left(\gamma \right) & \dot{\alpha} \,\sigma_2 - \dot{\gamma} \,\sigma_1 + \dot{\beta} \,\cos \left(\alpha \right)\,\cos \left(\beta \right)\,\sin \left(\gamma \right) & -\dot{\alpha} \,\cos \left(\beta \right)\,\sin \left(\alpha \right) - \dot{\beta} \,\cos \left(\alpha \right)\,\sin \left(\beta \right)
+	\end{array}\right)\\
+	\\
+	\text{where}\\
+	\\
+	\sigma_1 = \sin \left(\alpha \right)\,\sin \left(\gamma \right) - \cos \left(\alpha \right)\,\cos \left(\gamma \right)\,\sin \left(\beta \right)\\
+	\\
+	\sigma_2 = \cos \left(\alpha \right)\,\cos \left(\gamma \right) - \sin \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right)\\
+	\\
+	\sigma_3 = \cos \left(\gamma \right)\,\sin \left(\alpha \right) + \cos \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right)\\
+	\\
+	\sigma_4 = \cos \left(\alpha \right)\,\sin \left(\gamma \right) + \cos \left(\gamma \right)\,\sin \left(\alpha \right)\,\sin \left(\beta \right)
+\end{array}
+\]
+
+
+\[
+\Omega = \left(\begin{array}{c}
+	\dot{\alpha} + \dot{\gamma} \,\sin \left(\beta \right) \\
+	\dot{\beta} \,\cos \left(\alpha \right) - \dot{\gamma} \,\cos \left(\beta \right) \,\sin \left(\alpha \right) \\
+	\dot{\beta} \,\sin \left(\alpha \right) + \dot{\gamma} \,\cos \left(\alpha \right) \,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+در گام آخر، ماتریس تبدیل E با استفاده از تبدیل ژاکوبین و کمی ساده سازی به شکل زیر به دست می آید:
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Construct the matrix E by taking the Jacobian of Omega with respect to [alpha_dot; beta_dot; gamma_dot]
+E_matrix = jacobian(Omega_vec, [alpha_dot, beta_dot, gamma_dot]);
+
+% Simplify the matrix E
+E_matrix = simplify(E_matrix);
+
+% Display the matrix E(alpha, beta, gamma)
+disp('Matrix E(alpha, beta, gamma):');
+disp(E_matrix);
+
+	\end{lstlisting}
+\end{latin}
+
+\[
+E = \left(\begin{array}{ccc}
+	1 & 0 & \sin \left(\beta \right) \\
+	0 & \cos \left(\alpha \right) & -\cos \left(\beta \right) \,\sin \left(\alpha \right) \\
+	0 & \sin \left(\alpha \right) & \cos \left(\alpha \right) \,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+
+
+\subsection{ پاسخ سوال 7}
+
+\section{توصیف مکان}
+
+\subsection{ پاسخ سوال 1}
+
+\begin{enumerate}
+	\item \textbf{سنسورهای موقعیت }:
+	\begin{itemize}
+		\item \textit{سنسورهای خطی }: این حسگرها می‌توانند موقعیت یک نقطه خاص را در راستای یک محور خطی اندازه‌گیری کنند. به عنوان مثال، می‌توان از سنسورهای مقاومتی یا پتانسیومتر استفاده کرد.
+	\end{itemize}
+	
+	\item \textbf{انکودرهای چرخشی }:
+	\begin{itemize}
+		\item این حسگرها می‌توانند زاویه‌های چرخشی مفاصل ربات را اندازه‌گیری کنند. با استفاده از اطلاعات زاویه‌ای و موقعیت‌های اولیه، می‌توان به طور غیرمستقیم موقعیت نقطه مورد نظر را محاسبه کرد. این روش معمولاً در ترکیب با مدل‌های سینماتیکی بازوهای رباتیک استفاده می‌شود.
+	\end{itemize}
+	
+	\item \textbf{سنسورهای لیزری }:
+	\begin{itemize}
+		\item \textit{لیزرهای فاصله‌سنج}: این حسگرها می‌توانند فاصله تا یک نقطه مشخص را اندازه‌گیری کنند و به این ترتیب می‌توانند موقعیت را در فضای سه‌بعدی محاسبه کنند.
+	\end{itemize}
+	
+	\item \textbf{سنسورهای دوربین }:
+	\begin{itemize}
+		\item \textit{دوربین‌های استریو}: با استفاده از دوربین‌های استریو و تحلیل تصویر، می‌توان عمق و موقعیت نقاط را در فضای سه‌بعدی اندازه‌گیری کرد.
+		\item \textit{دوربین‌های RGB-D}: این دوربین‌ها، اطلاعات رنگی و عمق را به طور همزمان ارائه می‌دهند و به تعیین موقعیت نقاط در فضای سه‌بعدی کمک می‌کنند.
+	\end{itemize}
+	
+	\item \textbf{سنسورهای مادون قرمز }:
+	\begin{itemize}
+		\item این سنسورها می‌توانند با اندازه‌گیری زمان رفت و برگشت نور مادون قرمز، فاصله تا یک نقطه مشخص را محاسبه کنند.
+	\end{itemize}
+	
+در مجموع، هر یک از سنسورهایی که برای تعیین موقعیت استفاده می شوند را می توان در بازوهای رباتیک مورد استفاده قرار داد. اما استفاده از انکودر ها برای اندازه گیری زوایای بازوی ربات، و استفاده از دوربین های با کیفیت تصویر بالا و لیزر ها برای تشخیص موقعیت ابزار ربات نیز از جمله مواردی است که در کاربرد های رباتیک مورد استفاده قرار می گیرند.
+\end{enumerate}
+
+\subsection{ پاسخ سوال 2}
+
+علاوه بر دستگاه دکارتی، سایر دستگاه های مختصات نظیر دستگاه استوانه ای و کروی نیز می توانند مورد استفاده قرار بگیرند. انتخاب دستگاه مختصات مورد استفاده، وابسته به ساختار حرکت ربات دارد. به عنوان مثال، برای ارزیابی حرکت کره ی چشم، استفاده از مختصات کروی سهولت بیشتری دارد. اما برای استفاده در ریات های صفحه ای، مطابق با ساختار آنان، از دستگاه دکارتی استفاده می شود.
+علاوه بر این دستگاه ها، استفاده از دستگاه مختصات همگن که یک محور بعد w مازاد بر مختصات دکارتی دارد نیز استفاده می شود. مزیت استفاده از این دستگاه مختصات، در بررسی حرکات انتقالی و دورانی جسم است.
+
+
+
+\subsection{ پاسخ سوال 3}
+
+\begin{enumerate}
+	\item 
+در این قسمت برای به دست آوردن مختصات نقطه در دستگاه A پس از انجام دوران، باید ابتدا ماتریس دوران حاصل از دوران های ذکر شده محاسبه شده و سپس با ضرب این ماتریس در موقعیت نقطه در دستگاه B، مختصات جدید به دست آید. 
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Define symbolic angles alpha, beta, and gamma
+syms alpha beta gamma
+
+% Step 1: Define symbolic rotation matrices for each axis
+% Rotation about the z-axis (Rz(gamma))
+Rz_gamma = [cos(gamma), -sin(gamma), 0;
+sin(gamma),  cos(gamma), 0;
+0,           0,          1];
+
+% Rotation about the y-axis (Ry(beta))
+Ry_beta = [cos(beta),  0, sin(beta);
+0,          1, 0;
+-sin(beta),  0, cos(beta)];
+
+% Rotation about the x-axis (Rx(alpha))
+Rx_alpha = [1, 0,           0;
+0, cos(alpha), -sin(alpha);
+0, sin(alpha),  cos(alpha)];
+
+% Display each rotation matrix
+disp('Rotation matrix around Z-axis (Rz(gamma)):');
+disp(Rz_gamma);
+
+disp('Rotation matrix around Y-axis (Ry(beta)):');
+disp(Ry_beta);
+
+disp('Rotation matrix around X-axis (Rx(alpha)):');
+disp(Rx_alpha);
+
+% Step 2: Multiply the matrices to get the final rotation matrix
+Rpry = simplify(Rz_gamma * Ry_beta * Rx_alpha);
+
+% Display the final rotation matrix symbolically
+disp('Final rotation matrix Rpry (alpha, beta, gamma):');
+disp(Rpry);
+% Step 3: Assign numerical values to alpha, beta, gamma and compute the final numeric matrix
+alpha_val = deg2rad(30);  % 30 degrees
+beta_val = deg2rad(60);   % 60 degrees
+gamma_val = deg2rad(0);  % 0 degrees
+
+% Substitute numerical values into the final rotation matrix
+Rpry_numeric = double(subs(Rpry, {alpha, beta, gamma}, {alpha_val, beta_val, gamma_val}));
+
+% Display the final numerical result
+fprintf('Final rotation matrix with numerical values (alpha = %.2f , beta = %.2f, gamma = %.2f):\n', alpha_val, beta_val, gamma_val);
+disp(Rpry_numeric);
+
+R_num = Rpry_numeric;
+		
+	\end{lstlisting}
+\end{latin}
+
+\[
+\scriptsize
+R_{rpy} = \left(\begin{array}{ccc} 
+	\cos \left(\beta \right)\,\cos \left(\gamma \right) & \cos \left(\gamma \right)\,\sin \left(\alpha \right)\,\sin \left(\beta \right)-\cos \left(\alpha \right)\,\sin \left(\gamma \right) & \sin \left(\alpha \right)\,\sin \left(\gamma \right)+\cos \left(\alpha \right)\,\cos \left(\gamma \right)\,\sin \left(\beta \right)\\
+	\cos \left(\beta \right)\,\sin \left(\gamma \right) & \cos \left(\alpha \right)\,\cos \left(\gamma \right)+\sin \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right) & \cos \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right)-\cos \left(\gamma \right)\,\sin \left(\alpha \right)\\
+	-\sin \left(\beta \right) & \cos \left(\beta \right)\,\sin \left(\alpha \right) & \cos \left(\alpha \right)\,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+با جایگذاری مقادیر $\alpha$ ، $\beta$ و $\gamma$ در ماتریس فوق خواهیم داشت:
+\[
+R_{rpy} = \left(\begin{array}{ccc}
+	0.5000 & 0.4330 & 0.7500 \\
+	0 & 0.8660 & -0.5000 \\
+	-0.8660 & 0.2500 & 0.4330
+\end{array}\right)
+\]
+در نهایت با جایگذاری مختصات ابتدایی نقطه در دستگاه B و تنظیم ماتریس انتقال با مقادیر صفر، مختصات نهایی نقطه در دستگاه B را به دست می آوریم
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Define numerical values for the translation vector P (Example values)
+P_num = [0; 0; 0];  % Translation along x, y, and z
+
+% Define numerical values for the point p_B in local frame B (Example values)
+p_B_num = [1; 2; 3];  % Coordinates of the point in frame B
+
+% Step 6: Calculate the position in global frame A numerically
+P_in_A_numeric = P_num + R_num * p_B_num;
+
+% Step 7: Display the numerical result
+disp('Position of the point in the global coordinate system (numerical):');
+disp(P_in_A_numeric);
+	\end{lstlisting}
+\end{latin}
+در نهایت، مختصات نقطه ی P در دستگاه A به صورت زیر به دست می آید.
+\[
+\mathbf{A}_{\mathbf{P}} = \left(\begin{array}{c}
+	3.6160 \\
+	0.2321 \\
+	0.9330
+\end{array}\right)
+\]
+
+\item 
+در این قسمت، مشابه مرحله ی قبل عمل می کنیم. با این تفاوت که برای به دست آوردن ماتریس دوران، باید تغییرات زاویه را نسبت به محور های متحرک در نظر بگیریم. در این بخش برای سادگی، از تبدیل Ruvw استفاده می کنیم.
+ 
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Define symbolic angles alpha, beta, and gamma
+syms alpha beta gamma
+
+% Step 1: Define symbolic rotation matrices for each axis
+% Rotation about the x-axis (Ru(alpha))
+Ru_alpha = [1,          0,           0;
+0, cos(alpha), -sin(alpha);
+0, sin(alpha),  cos(alpha)];
+
+% Rotation about the y-axis (Rv(beta))
+Rv_beta = [cos(beta),  0, sin(beta);
+0,          1, 0;
+-sin(beta), 0, cos(beta)];
+
+% Rotation about the z-axis (Rw(gamma))
+Rw_gamma = [cos(gamma), -sin(gamma), 0;
+sin(gamma),  cos(gamma), 0;
+0,           0,          1];
+
+% Display each rotation matrix
+disp('Rotation matrix around X-axis (Ru(alpha)):' );
+disp(Ru_alpha);
+
+disp('Rotation matrix around Y-axis (Rv(beta)):' );
+disp(Rv_beta);
+
+disp('Rotation matrix around Z-axis (Rw(gamma)):' );
+disp(Rw_gamma);
+
+% Step 2: Multiply the matrices to get the final rotation matrix
+Ruvw = simplify(Ru_alpha * Rv_beta * Rw_gamma);
+
+% Display the final rotation matrix symbolically
+disp('Final rotation matrix Rpry (alpha, beta, gamma):');
+disp(Ruvw);
+	\end{lstlisting}
+\end{latin}
+
+\[
+\scriptsize
+R_{uvw} = \left(\begin{array}{ccc} 
+	\cos \left(\beta \right)\,\cos \left(\gamma \right) & -\cos \left(\beta \right)\,\sin \left(\gamma \right) & \sin \left(\beta \right)\\
+	\cos \left(\alpha \right)\,\sin \left(\gamma \right)+\cos \left(\gamma \right)\,\sin \left(\alpha \right)\,\sin \left(\beta \right) & \cos \left(\alpha \right)\,\cos \left(\gamma \right)-\sin \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right) & -\cos \left(\beta \right)\,\sin \left(\alpha \right)\\
+	\sin \left(\alpha \right)\,\sin \left(\gamma \right)-\cos \left(\alpha \right)\,\cos \left(\gamma \right)\,\sin \left(\beta \right) & \cos \left(\gamma \right)\,\sin \left(\alpha \right)+\cos \left(\alpha \right)\,\sin \left(\beta \right)\,\sin \left(\gamma \right) & \cos \left(\alpha \right)\,\cos \left(\beta \right)
+\end{array}\right)
+\]
+
+با جایگذاری مقادیر $\alpha$ ، $\beta$ و $\gamma$ در ماتریس فوق خواهیم داشت:
+
+\[
+R_{uvw} = \left(\begin{array}{ccc} 
+	0.9329 & 0.0670 & -0.3540 \\
+	-0.1999 & 0.9137 & -0.3538 \\
+	0.2997 & 0.4008 & 0.8657
+\end{array}\right)
+\]
+
+در نهایت با جایگذاری مختصات ابتدایی نقطه در دستگاه B و تنظیم ماتریس انتقال با مقادیر صفر، مختصات نهایی نقطه در دستگاه B را به دست می آوریم
+
+\begin{latin}
+	\begin{lstlisting}[frame=single,style=Matlab-Pyglike]
+% Define numerical values for the translation vector P (Example values)
+P_num = [0; 0; 0];  % Translation along x, y, and z
+
+% Define numerical values for the point p_B in local frame B (Example values)
+p_B_num = [1; 2; 3];  % Coordinates of the point in frame B
+
+% Step 6: Calculate the position in global frame A numerically
+P_in_A_numeric = P_num + R_num * p_B_num;
+
+% Step 7: Display the numerical result
+disp('Position of the point in the global coordinate system (numerical):');
+disp(P_in_A_numeric);
+	\end{lstlisting}
+\end{latin}
+در نهایت، مختصات نقطه ی P در دستگاه A به صورت زیر به دست می آید.
+
+\[
+\mathbf{A}_P = \left(\begin{array}{c} 
+	0.0050 \\
+	0.5660 \\
+	3.6986
+\end{array}\right)
+\]
+
+\item 
+عبارت پیش ضرب به معنای ضرب ماتریس ها از سمت چپ می باشد. بنابراین، در محاسبه ی ماتریس دوران، ابتدایی ترین دوران $\alpha$ در سمت راست نوشته می شود و ماتریس دومین دوران $\beta$ از سمت راست در آن ضرب می شود و همین قضیه برای دوران $\gamma$ نیز صادق است. برای دوران های حول محور های ثابت، از پیش ضرب استفاده می شود. 
+حال آنکه برای محاسبه ی دوران حول محور های ثابت، از پس ضرب استفاده می شود؛ به این صورت که ماتریس اولین دوران $\alpha$ نوشته شده و سپس ماتریس دومین دوران $\beta$ در سمت راست آن نوشته می شود. 
+
+\end{enumerate}
+
+
+\begin{thebibliography}{9}
+	
+	\bibitem{hassani2021kinematic}
+	A. Hassani, M.R. Dindarloo, R. Khorambakht, A. Bataleblu, H. Sadeghi, R. Heidari, A. Iranfar, P. Hasani, N.S. Hojati, A. Khorasani, et al.,
+	\textit{Kinematic and dynamic analysis of arash asist: Toward micro positioning}, 
+	in \textit{2021 9th RSI International Conference on Robotics and Mechatronics (ICRoM)}, 
+	pp. 59--65, 2021, IEEE.
+	
+\end{thebibliography}
+
