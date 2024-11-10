@@ -188,16 +188,17 @@ T = \left(\begin{array}{cccc}
 	\renewcommand{\arraystretch}{1.5}
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 		\hline
-		Transformation & \( s_x \) & \( s_y \) & \( s_z \) & \( s_{ox} \) & \( s_{oy} \) & \( s_{oz} \) & \( \theta \) & \( d \) \\ \hline
+		Transformation & \( s_x \) & \( s_y \) & \( s_z \) & \( s_{ox} \) & \( s_{oy} \) & \( s_{oz} \) & \( \theta \) & 0 \\ \hline
 		\( S_1 \) & 1 & 0 & 0 & 0 & 0 & 0 & 0 & \( d_1 \) \\ \hline
-		\( S_2 \) & 0 & 0 & 1 & 0 & 0 & \( d_1 \) & \( \theta_2 \) & 0 \\ \hline
-		\( S_3 \) & 0 & 0 & 1 & 0 & \( a_2 + d_1 \) & 0 & \( \theta_3 \) & 0 \\ \hline
+		\( S_2 \) & 0 & 0 & 1 & 0 & 0 & \( a_1 \) & \( \theta_2 \) & 0 \\ \hline
+		\( S_3 \) & 0 & 0 & 1 & 0 & \( a_2 + a_3 \) & 0 & \( \theta_3 \) & 0 \\ \hline
 	\end{tabular}
 	\caption{Screw Transformation Parameters}
 \end{table}
  
  با محاسبه ی ماتریس های تبدیل پیچه و ضرب آنها خواهیم داشت:
  \[
+ \tiny
  S = S_1 \times S_2 \times S_3 = 
  \left(\begin{array}{cccc}
  	\cos \left(\theta_2 +\theta_3 \right) & -\sin \left(\theta_2 +\theta_3 \right) & 0 & d_1 +{\left(a_2 +d_1 \right)}\,{\left(\sin \left(\theta_2 +\theta_3 \right)-\sin \left(\theta_2 \right)\right)}\\
@@ -207,8 +208,50 @@ T = \left(\begin{array}{cccc}
  \end{array}\right)
  \]
  
+ در گام بعد، موقعیت و مختصات ابتدایی و انتهایی نقطه ابزار و مرجع مشخص می شوند:
+ \[
+ S_0 = 
+ \begin{bmatrix}
+ 	1 & 0 & 0 & a_2 + a_3 \\
+ 	0 & 1 & 0 & 0 \\
+ 	0 & 0 & 1 & 0 \\
+ 	0 & 0 & 0 & 1
+ \end{bmatrix}
+ \]
+ \[
+ \tiny
+ S_{\text{final}} = 
+ \begin{bmatrix}
+ 	\cos(\theta_2 + \theta_3) & -\sin(\theta_2 + \theta_3) & 0 & d_1 + \cos(\theta_2 + \theta_3)(a_2 + a_3) - a_1 (\cos(\theta_2) - 1) + \sin(\theta_2) \sin(\theta_3)(a_1 + a_2) - \cos(\theta_2)(a_1 + a_2)(\cos(\theta_3) - 1) \\
+ 	\sin(\theta_2 + \theta_3) & \cos(\theta_2 + \theta_3) & 0 & \sin(\theta_2 + \theta_3)(a_2 + a_3) - a_1 \sin(\theta_2) - \cos(\theta_2) \sin(\theta_3)(a_1 + a_2) - \sin(\theta_2)(a_1 + a_2)(\cos(\theta_3) - 1) \\
+ 	0 & 0 & 1 & 0 \\
+ 	0 & 0 & 0 & 1
+ \end{bmatrix}
+ \]
+ 
+ \[
+ \text{Error} = 
+ \begin{bmatrix}
+ 	0 & 0 & 0 & a_1 + d_1 - a_1 \cos(\theta_2 + \theta_3) \\
+ 	0 & 0 & 0 & -a_1 \sin(\theta_2 + \theta_3) \\
+ 	0 & 0 & 0 & -d_1 \\
+ 	0 & 0 & 0 & 0
+ \end{bmatrix}
+ \]
+ 
  با مقایسه ی این ماتریس با نتایج بخش های قبل مشاهده می شود که ماتریس دوران حاصل از روش پیچه به درستی محاسبه شده است اما تفاوت هایی در ماتریس انتقال وجود دارد.
 
+ \subsubsection{فضای کاری ربات}
+ 
+ با در اختیار داشتن ماتریس دوران و تعیین اندازه ی طول بازوهای ربات، می توانیم به ازای مقادیر مشخص برای زوایای چرخش بازوها و میزان جابه جایی بازوی اول به صورت زیر به دست می آید:
+ 
+ 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../img/2_Workspace}
+	\caption{}
+	\label{fig:2workspace}
+\end{figure}
  
 \section{ پاسخ سوال 3}
 \subsection{روش دناویت هارتنبرگ}
@@ -247,7 +290,7 @@ T = \begin{pmatrix}
 به دلیل محدودیت در فضای گزارش، المان های این ماتریس به در این قسمت آورده نشده است، اما با مراجعه به کد متلب مربوطه، می توان این ماتریس را مشاهده کرد.
 
 \subsection{روش پیچه های متوالی}
-برای حل این مطئله به روش پیچه های متوالی، به طریق زیر عمل می کنیم.
+برای حل این مسئله به روش پیچه های متوالی، به طریق زیر عمل می کنیم.
 ابتدا دستگاه های مختصات مرجع و ابزار را بر روی ربات قرار می دهیم. جهت گیری این محور ها مطابق با شکل رسم شده در کتاب می باشد.
 در گام بعد، موقعیت و جهت گیری اولیه ی ابزار ربات را به صورت زیر به دست می آوریم:
 
@@ -311,7 +354,53 @@ S_1 \cdot S_2 \cdot S_3 =
 	0 & 0 & 0 & 1
 \end{array}\right)
 \]
- حال با 	
+سپس با مشخص کردن ماتریس تبدیل نقطه ی اولیه به نقطه ی ثانویه به صورت زیر خواهیم داشت:
+ حال با پیاده سازی	معادلات DH مطابق پارامتر های زیر خواهیم داشت:
+ \[
+ T_1 = DH(0, -\frac{\pi}{2}, a_1, \theta_1) \quad \text{(پارامترهای دناویت هارتنبرگ 1)}
+ \]
+ \[
+ T_2 = DH(0, \frac{\pi}{2}, 0, \theta_2) \quad \text{(پارامترهای دناویت هارتنبرگ 2)}
+ \]
+ \[
+ T_3 = DH(0, \frac{\pi}{2}, a_3, \theta_3) \quad \text{(پارامترهای دناویت هارتنبرگ 3)}
+ \]
+ 
+ آنگاه با محاسبه ی ماتریس تبدیل حاصل از این تبدیل ها خواهیم داشت:
+ \[
+ U_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad
+ V_0 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad
+ W_0 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}, \quad
+ E_0 = \begin{bmatrix} 0 \\ 0 \\ a_1 + a_3 \end{bmatrix}
+ \]
+ 
+ \[
+ S_0 = \begin{bmatrix}
+ 	U_0 & V_0 & W_0 & E_0 \\
+ 	0 & 0 & 0 & 1
+ \end{bmatrix} = 
+ \begin{bmatrix}
+ 	1 & 0 & 0 & 0 \\
+ 	0 & 1 & 0 & 0 \\
+ 	0 & 0 & 1 & a_1 + a_3 \\
+ 	0 & 0 & 0 & 1
+ \end{bmatrix}
+ \]
+ سپس، با ضرب ماتریس تبدیل به دست آمده در این ماتریس، موقعیت و جهت گیری نقطه ی انتهایی بازوی سوم مشخص می شود:
+ \[
+ \tiny
+ S_3^0 = 
+ \begin{bmatrix}
+ 	\cos \left(\theta_1 \right)\,\cos \left(\theta_2 \right)\,\cos \left(\theta_3 \right) - \sin \left(\theta_1 \right)\,\sin \left(\theta_3 \right) & -\cos \left(\theta_3 \right)\,\sin \left(\theta_1 \right) - \cos \left(\theta_1 \right)\,\cos \left(\theta_2 \right)\,\sin \left(\theta_3 \right) & \cos \left(\theta_1 \right)\,\sin \left(\theta_2 \right) & \cos \left(\theta_1 \right)\,\sin \left(\theta_2 \right)\,(a_1 + a_3) - a_1 \,\cos \left(\theta_1 \right)\,\sin \left(\theta_2 \right) \\
+ 	\cos \left(\theta_1 \right)\,\sin \left(\theta_3 \right) + \cos \left(\theta_2 \right)\,\cos \left(\theta_3 \right)\,\sin \left(\theta_1 \right) & \cos \left(\theta_1 \right)\,\cos \left(\theta_3 \right) - \cos \left(\theta_2 \right)\,\sin \left(\theta_1 \right)\,\sin \left(\theta_3 \right) & \sin \left(\theta_1 \right)\,\sin \left(\theta_2 \right) & \sin \left(\theta_1 \right)\,\sin \left(\theta_2 \right)\,(a_1 + a_3) - a_1 \,\sin \left(\theta_1 \right)\,\sin \left(\theta_2 \right) \\
+ 	-\cos \left(\theta_3 \right)\,\sin \left(\theta_2 \right) & \sin \left(\theta_2 \right)\,\sin \left(\theta_3 \right) & \cos \left(\theta_2 \right) & \cos \left(\theta_2 \right)\,(a_1 + a_3) - a_1 \,(\cos \left(\theta_2 \right) - 1) \\
+ 	0 & 0 & 0 & 1
+ \end{bmatrix}
+ \]
+ 
+در نهایت، مشاهده می شود که مقدار انتقال با نتایج به دست آمده از روش دناویت هارتنبرگ برابر است، اما ماتریس دوران تفاوت دارد.
+
+ 
 
 
 \begin{thebibliography}{9}
