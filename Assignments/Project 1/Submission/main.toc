@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}سوال اول - مشخصات فنی ربات}{3}{section.1}%
+\contentsline {section}{\numberline {2}سوال دوم - روش دناویت-هارتنبرگ}{4}{section.2}%
+\contentsline {section}{\numberline {3}سوال سوم - روش پیچه}{4}{section.3}%
+\contentsline {section}{\numberline {4}سوال چهارم - سینماتیک وارون}{6}{section.4}%
+\contentsline {section}{\numberline {5}سوال پنجم - صحت سنجی با SolidWorks}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}محاسبه ی عددی}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}محاسبه ی هندسی}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}سوال ششم -شبیه سازی}{7}{section.6}%
+\contentsline {section}{\numberline {7}سوال هفتم - فرایند ساخت ربات}{16}{section.7}%
