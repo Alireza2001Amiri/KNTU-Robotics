@@ -1,0 +1,30 @@
+# encoding: utf-8
+# 2024 R1
+SetScriptVersion(Version="24.1.144")
+template1 = GetTemplate(TemplateName="Rigid Dynamics")
+system1 = template1.CreateSystem()
+template2 = GetTemplate(TemplateName="ANSYSMotion")
+system2 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+system2.Delete()
+system1.Delete()
+fileType1 = GetFileType(Name="GeometryFileType")
+ImportFile(
+    FilePath="C:/Users/lenovo/Desktop/New folder (2)/Project_Simple_CAD/Final_Model.SLDASM",
+    FileType=fileType1)
+system3 = GetSystem(Name="Geometry")
+geometry1 = system3.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+geometryComponent1 = system3.GetComponent(Name="Geometry")
+system4 = template1.CreateSystem(
+    ComponentsToShare=[geometryComponent1],
+    Position="Right",
+    RelativeTo=system3)
+modelComponent1 = system4.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system4.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+Save(Overwrite=True)

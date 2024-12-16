@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="10/20/24||11:49:00" using="Simscape Multibody Link Version 5.0" from="SolidWorks 24.5.0"/>
+<ModelUnits mass="kilogram" length="centimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="sfg" uid="sfg" version="404">
+<AssemblyFile name="sfg.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Base-1" uid="Base-1" grounded="true" entityUid="Base*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 -1.5 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Cyliner-1" uid="Cyliner-1" entityUid="Cyliner*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 -1 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Link2-2" uid="Link2-2" entityUid="Link2*:*Default">
+<Transform>
+<Rotation>-1.0000000000000002 6.9275830094165769e-016 5.8286708792820728e-016 5.8286708792820728e-016 7.3540595677099381e-016 1.0000000000000002 6.927583009416572e-016 1 -7.3540595677099341e-016</Rotation>
+<Translation>-0.49999999999999983 1.2800000000000005 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Link1-1" uid="Link1-1" entityUid="Link1*:*Default">
+<Transform>
+<Rotation>1.665334536937737e-016 0 1 1 -8.8686904462254971e-016 -1.6653345369377351e-016 8.868690446225503e-016 1 0</Rotation>
+<Translation>0 0.64000000000000012 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Link2-1" uid="Link2-1" entityUid="Link2*:*Default">
+<Transform>
+<Rotation>-1.0000000000000002 -3.5112753967255059e-016 1.6653345369377348e-016 -1.6653345369377348e-016 0 -1.0000000000000002 3.5112753967255029e-016 -1 0</Rotation>
+<Translation>-0.5 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Link1-2" uid="Link1-2" entityUid="Link1*:*Default">
+<Transform>
+<Rotation>1.1102230246251562e-016 4.1681269566140294e-016 -1 -1 4.8506207512308287e-016 -1.1102230246251558e-016 4.8506207512308287e-016 1 4.1681269566140304e-016</Rotation>
+<Translation>-1.0000000000000004 0.64000000000000024 0</Translation>
+</Transform>
+</Instance>
+<Instance name="End-effector-1" uid="End-effector-1" entityUid="End-effector*:*Default">
+<Transform>
+<Rotation>1.0000000000000002 -7.3439166436509988e-016 -4.1633363423443365e-016 4.163336342344336e-016 -7.6348247014788714e-016 1.0000000000000002 -7.3439166436509988e-016 -1 -7.6348247014788606e-016</Rotation>
+<Translation>0.67500000000000038 1.2800000000000005 -1.2773452115730031e-015</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident20">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Base-1</Uid>
+</InstancePath>
+<Position>1.4116800898506127e-016 0.5 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 1 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Base-1</Uid>
+</InstancePath>
+<Position>1.4116800898506127e-016 1 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Parallel name="Parallel3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>sfg</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link1-1</Uid>
+</InstancePath>
+<Position>-0.64000000000000001 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 1 -0.49999999999999994</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident25">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link1-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link2-1</Uid>
+</InstancePath>
+<Position>-0.50000000000000022 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 1 -0.49999999999999994</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident16">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Cyliner-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link2-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident17">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link2-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link1-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link2-1</Uid>
+</InstancePath>
+<Position>0.50000000000000011 0.05000000000000001 -1.8369701987210302e-016</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link1-2</Uid>
+</InstancePath>
+<Position>0.64000000000000001 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link1-2</Uid>
+</InstancePath>
+<Position>-0.6399999999999999 0.049999999999999996 -2.2204460492503131e-016</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>0.50000000000000022 0.050000000000000003 -2.2204460492503131e-016</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric4">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link1-1</Uid>
+</InstancePath>
+<Position>0.64000000000000012 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>-0.50000000000000011 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link1-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric5">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>-0.50000000000000011 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>End-effector-1</Uid>
+</InstancePath>
+<Position>-0.67500000000000027 0.050000000000000003 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident15">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>-0.50000000000000022 0.049999999999999996 0.10000000000000009</Position>
+<Axis>1.8041124150158747e-016 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>End-effector-1</Uid>
+</InstancePath>
+<Position>-0.67500000000000016 0.050000000000000003 0.099999999999999867</Position>
+<Axis>1.8503717077085997e-016 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident19">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Link2-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>End-effector-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Base" uid="Base*:*Default" version="127">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Base.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>3607.3009183012755</Mass>
+<CenterOfMass>0 0.47278442451900776 0</CenterOfMass>
+<Inertia>1606.7261677107806 2617.5792814543256 1606.7261677107804 -1.5574468286646753e-014 -8.8817841970012523e-014 2.4758725929694661e-014</Inertia>
+</MassProperties>
+<GeometryFile name="Base_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Cyliner" uid="Cyliner*:*Default" version="186">
+<ModelUnits mass="kilogram" length="centimeter"/>
+<PartFile name="Cyliner.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>770.20154808587256</Mass>
+<CenterOfMass>1.5887974976505383e-006 0.49461334035063553 2.8216588634644798e-006</CenterOfMass>
+<Inertia>114.47471494559521 93.742494426358391 109.22601750746709 -0.00047535235488395437 -0.00089999295297904308 -0.00088163666836776986</Inertia>
+</MassProperties>
+<GeometryFile name="Cyliner_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="End-effector" uid="End-effector*:*Default" version="132">
+<ModelUnits mass="kilogram" length="meter"/>
+<PartFile name="End-effector.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>28.570796326794898</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>0.1206812308687235 5.1000635442553817 5.0270003072646494 0 1.0179858080015313e-015 0</Inertia>
+</MassProperties>
+<GeometryFile name="End-effector_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Link1" uid="Link1*:*Default" version="131">
+<ModelUnits mass="kilogram" length="meter"/>
+<PartFile name="Link1.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>27.170796326794893</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>0.11484789753539004 4.4083959766479781 4.3388327396572466 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Link1_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Link2" uid="Link2*:*Default" version="149">
+<ModelUnits mass="kilogram" length="meter"/>
+<PartFile name="Link2.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>21.570796326794902</Mass>
+<CenterOfMass>0 0 0</CenterOfMass>
+<Inertia>0.091514564202056739 2.2731102162248464 2.2175469792341143 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Link2_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
