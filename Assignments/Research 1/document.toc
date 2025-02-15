@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Historical Background}{1}{section.2}%
+\contentsline {section}{\numberline {3}Tensor Structure}{1}{section.3}%
+\contentsline {section}{\numberline {4}Comparison with Matrices}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Definition and Structure}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Operations}{2}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Applications}{2}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Similarities and Differences}{2}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Usage of Tensors}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Applications in Engineering}{2}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Tensors in Physics}{3}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Applications in Machine Learning}{3}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}%

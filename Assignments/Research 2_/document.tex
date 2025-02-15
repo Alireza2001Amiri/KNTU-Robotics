@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Properties and Applications of Skew-Symmetric Matrices}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\tableofcontents
+	
+	\section{Introduction}
+	A skew-symmetric matrix $A$ is a square matrix that satisfies the condition:
+	\begin{equation}
+		A^T = -A.
+	\end{equation}
+	These matrices have numerous applications in physics, engineering, and computer graphics.
+	
+	\section{Properties of Skew-Symmetric Matrices}
+	
+	\subsection{Determinant}
+	The determinant of an odd-order skew-symmetric matrix is always zero:
+	\begin{equation}
+		\det(A) = 0, \quad \text{if } A \text{ is } (2n+1) \times (2n+1).
+	\end{equation}
+	This follows from the property that $\det(A) = \det(A^T) = \det(-A) = (-1)^n \det(A)$. 
+	
+	\subsection{Eigenvalues}
+	The eigenvalues of a skew-symmetric matrix are either zero or purely imaginary:
+	\begin{equation}
+		\lambda = i \mu, \quad \mu \in \mathbb{R}.
+	\end{equation}
+	This follows from the characteristic equation of $A$ and its similarity transformations.
+	
+	\subsection{Trace}
+	Since the diagonal elements of a skew-symmetric matrix are always zero, the trace is also zero:
+	\begin{equation}
+		\text{tr}(A) = \sum_{i} A_{ii} = 0.
+	\end{equation}
+	
+	\subsection{Rank}
+	The rank of a skew-symmetric matrix is always an even number. This property follows from the decomposition of $A$ into canonical forms.
+	
+	\section{Operations Involving Skew-Symmetric Matrices}
+	
+	\subsection{Addition and Scalar Multiplication}
+	If $A$ and $B$ are skew-symmetric matrices, their sum is also skew-symmetric:
+	\begin{equation}
+		(A + B)^T = A^T + B^T = -A - B = -(A+B).
+	\end{equation}
+	Similarly, for any scalar $k$:
+	\begin{equation}
+		(kA)^T = kA^T = k(-A) = -kA.
+	\end{equation}
+	
+	\subsection{Matrix Products}
+	If $A$ and $B$ are skew-symmetric, their product is skew-symmetric if and only if they commute:
+	\begin{equation}
+		AB = -BA \Rightarrow AB \text{ is skew-symmetric}.
+	\end{equation}
+	
+	\section{Applications of Skew-Symmetric Matrices}
+	
+	\subsection{Mechanics}
+	Skew-symmetric matrices represent angular momentum and facilitate computations in rotational dynamics.
+	
+	\subsection{Electromagnetism}
+	The electromagnetic field tensor is a skew-symmetric matrix combining electric and magnetic fields.
+	
+	\subsection{Computer Graphics}
+	Used in rotational transformations and cross-product computations for 3D rendering.
+	
+	\subsection{Control Theory}
+	Skew-symmetric matrices describe symmetries in Hamiltonian systems and conservation laws.
+	
+	\subsection{Quantum Mechanics}
+	Appear in the study of spin operators and fundamental transformations.
+	
+	\section{Relation to Symmetric Matrices}
+	Any square matrix $B$ can be decomposed into symmetric and skew-symmetric components:
+	\begin{equation}
+		B = \frac{1}{2}(B + B^T) + \frac{1}{2}(B - B^T).
+	\end{equation}
+	This allows for easier analysis and classification of matrices.
+	
+	\section{Conclusion}
+	Skew-symmetric matrices play a crucial role in various mathematical and engineering applications. Their properties, including determinant constraints, eigenvalue characteristics, and structural decompositions, make them fundamental tools in theoretical and applied sciences.
+	
+\end{document}

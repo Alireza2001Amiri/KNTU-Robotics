@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Properties of Skew-Symmetric Matrices}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Determinant}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Eigenvalues}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Trace}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Rank}{2}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Operations Involving Skew-Symmetric Matrices}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Addition and Scalar Multiplication}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Matrix Products}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Applications of Skew-Symmetric Matrices}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Mechanics}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Electromagnetism}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Computer Graphics}{3}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Control Theory}{3}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Quantum Mechanics}{3}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Relation to Symmetric Matrices}{3}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}%
